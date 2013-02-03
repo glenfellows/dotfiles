@@ -10,7 +10,7 @@ Woefully basic, but will get better as I learn more. I obsess over organization 
         $ mv .bash_profile dotfiles/bash
         $ mv .bashrc dotfiles/bash
         $ mv .gitconfig dotfiles
-        $ mv .vimrc dotfiles
+        $ mv .vimrc dotfiles/vim
         $ mv .zprofile dotfiles/zsh
         $ mv .zshrc dotfiles/zsh
 
@@ -20,7 +20,8 @@ Woefully basic, but will get better as I learn more. I obsess over organization 
         $ ln -s dotfiles/bash/.bash_profile .bash_profile
         $ ln -s dotfiles/bash/.bashrc .bashrc
         $ ln -s dotfiles/.gitconfig .gitconfig
-        $ ln -s dotfiles/.vimrc .vimrc
+        $ ln -s dotfiles/vim/.vimrc .vimrc
+        $ ln -s dotfiles/vim .vim
         $ ln -s dotfiles/zsh/.zprofile .zprofile
         $ ln -s dotfiles/zsh/.zshrc .zshrc
 
