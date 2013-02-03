@@ -1,0 +1,21 @@
+[github]
+    user = glenfellows
+[user]
+	name = Glen Fellows
+	email = glen@glenfellows.net
+[core]
+	editor = vim
+[color]
+	ui = true
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+[color "branch"]
+    current = yellow
+    local  = blue
+    remote = green
+[alias]
+    co = checkout
+[push]
+	default = simple
