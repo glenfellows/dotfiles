@@ -11,8 +11,8 @@ Woefully basic, but will get better as I learn more. I obsess over organization 
         $ mv .bashrc dotfiles/bash
         $ mv .gitconfig dotfiles
         $ mv .vimrc dotfiles
-        $ mv .zprofile dotfiles
-        $ mv .zshrc dotfiles
+        $ mv .zprofile dotfiles/zsh
+        $ mv .zshrc dotfiles/zsh
 
 2.  Create symbolic links for any files that were moved:
         
@@ -21,8 +21,8 @@ Woefully basic, but will get better as I learn more. I obsess over organization 
         $ ln -s dotfiles/bash/.bashrc .bashrc
         $ ln -s dotfiles/.gitconfig .gitconfig
         $ ln -s dotfiles/.vimrc .vimrc
-        $ ln -s dotfiles/.zprofile .zprofile
-        $ ln -s dotfiles/.zshrc .zshrc
+        $ ln -s dotfiles/zsh/.zprofile .zprofile
+        $ ln -s dotfiles/zsh/.zshrc .zshrc
 
 
 ## Assumptions

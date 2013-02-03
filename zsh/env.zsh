@@ -1,4 +1,4 @@
-# Here is where I put my environment variables
+# Here is where I put my zsh environment variables
 
 # set path
 export PATH=/usr/local/bin:~/bin:$PATH
