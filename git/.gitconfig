@@ -5,6 +5,7 @@
 	email = glen@glenfellows.net
 [core]
 	editor = vim
+	excludesfile = ~/dotfiles/git/global.gitignore
 [color]
     ui = auto
     diff = auto
