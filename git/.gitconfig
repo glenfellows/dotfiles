@@ -6,7 +6,11 @@
 [core]
 	editor = vim
 [color]
-	ui = true
+    ui = auto
+    diff = auto
+    status = auto
+    branch = auto
+    interactive = auto
 [color "status"]
     added = yellow
     changed = green
