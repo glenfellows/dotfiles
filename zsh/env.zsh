@@ -9,3 +9,12 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 # Enable directory and file color highlighting
 export CLICOLOR=1
 export LSCOLORS=gxFxcxdxbxegedabagacad
+
+export EDITOR="vim"
+bindkey -v 
+
+# vi style incremental search
+# bindkey '^R' history-incremental-search-backward
+# bindkey '^S' history-incremental-search-forward
+# bindkey '^P' history-search-backward
+# bindkey '^N' history-search-forward 
