@@ -8,6 +8,11 @@ set number
 colorscheme solarized
 set background=dark
 
+" the gui
+if has ('gui_running')
+    set guifont=Source\ Code\ Pro\ Light:h17
+endif
+
 " windows
 set winheight=5
 set winminheight=5

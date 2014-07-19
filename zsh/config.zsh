@@ -2,6 +2,9 @@
 
 autoload -U colors && colors
 
+# set auto cd
+setopt AUTO_CD
+
 # set prompt
 setopt prompt_subst
 PROMPT='
