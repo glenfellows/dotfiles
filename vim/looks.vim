@@ -4,11 +4,11 @@ syntax enable
 set cursorline
 set number
 
-" the terminal
+" set color scheme
+let g:solarized_termtrans = 1
 colorscheme solarized
 set background=dark
 
-" the gui
 if has ('gui_running')
     set guifont=Source\ Code\ Pro\ Light:h17
 endif

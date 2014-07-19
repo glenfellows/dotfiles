@@ -10,11 +10,12 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export CLICOLOR=1
 export LSCOLORS=gxFxcxdxbxegedabagacad
 
+# Use vim and vim key bindings
 export EDITOR="vim"
 bindkey -v 
 
 # vi style incremental search
-# bindkey '^R' history-incremental-search-backward
-# bindkey '^S' history-incremental-search-forward
-# bindkey '^P' history-search-backward
-# bindkey '^N' history-search-forward 
+bindkey '^R' history-incremental-search-backward
+bindkey '^S' history-incremental-search-forward
+bindkey '^P' history-search-backward
+bindkey '^N' history-search-forward 
