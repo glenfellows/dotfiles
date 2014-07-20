@@ -1,5 +1,6 @@
-" Here is where I put various mappings
+" Glen Fellows: settings for key mappings 
 
+" Change the map leader from the \ default
 let mapleader = ","
 
 " Fix default regex behavior
@@ -17,12 +18,7 @@ nnoremap ; :
 " Use jj to exit back to normal mode
 inoremap jj <ESC>
 
-" Create a new vertical split and switch to it
-nnoremap <leader>w <C-w>v<C-w>1
-
-" Mappings for moving around in splits
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+" Use the tab key to match bracket pairs
+nnoremap <tab> %
+vnoremap <tab> %
 

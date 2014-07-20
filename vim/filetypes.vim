@@ -1,21 +1,19 @@
-" Here is where I put my configuration for various filetypes
+" Glen Fellows: settings for working with files and filetypes
 
-filetype on
-filetype indent on
-filetype plugin on
+" No backup files
+set nobackup
 
-" Save when I tab away from vim
-au FocusLost * :wa
+" Save when tabbing away from vim
+if has ('autocmd')
+   au FocusLost * :wa
+endif
 
-" Markdown
-au Bufread,BufNewFile *.md,*.mkdn,*.mdown,*.mdwn,*.markdown setfiletype mkd set textwidth=79 nolist
+" Automatically read file when it is changed outside vim
+set autoread
 
-" PHP
-au BufNewFile,BufRead *.php,*.phpt,*.htm,*.html set ts=2 sts=2 sw=2 expandtab
-au BufNewFile,BufRead *.phpt set ft=php
+" Hide buffers instead of closing them
+set hidden
 
-" Python
-au BufNewFile,BufRead *.py setlocal ts=2 sts=2 sw=2 expandtab
+" Enable settings specific to the type of file
+filetype indent plugin on
 
-" Ruby
-au BufRead,BufNewFile Gemfile,*.ru setfiletype ruby

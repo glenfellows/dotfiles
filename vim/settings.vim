@@ -1,37 +1,33 @@
-" Here is where I put Vim settings
+" Glen Fellows: general vim settings
 
-set autoindent
-set autoread
-set backspace=indent,eol,start
-set cursorline
-set encoding=utf-8
-set expandtab
-set fileencoding=utf-8
-set gdefault
-set hidden
-set hlsearch
-set ignorecase
-set incsearch
-set laststatus=2
+
+"-----------------
+" General settings
+"-----------------
+
+" Don't redraw while executing macros
+set lazyredraw
+
+" Prevent some security exploits
 set modelines=0
-set nocompatible
-set nolist
-set noswapfile
-set relativenumber
-set ruler
-set scrolloff=3
-set shiftwidth=4
-set showcmd
-set showmatch
-set showmode
-set smartcase
-set smartindent
-set softtabstop=4
-set tabstop=4
-set textwidth=79
+
+" Enable fast scrolling
 set ttyfast
-set undofile
-set visualbell
-set wildmenu
-set wildmode=list:longest
-set wrap
+
+
+"----------------
+" Search settings 
+"----------------
+
+" All lower-case: case-insensitive. Any uppercase: case-sensitive 
+set ignorecase 
+set smartcase
+
+" Highlight search results as you type
+set hlsearch
+set incsearch
+set showmatch
+
+" Apply substitutions globally on lines
+set gdefault
+
