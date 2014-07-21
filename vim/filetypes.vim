@@ -15,5 +15,15 @@ set autoread
 set hidden
 
 " Enable settings specific to the type of file
-filetype indent plugin on
+filetype on
+filetype indent on
+filetype plugin on
+
+
+"-------------------------------------------------------------
+" Markdown
+"-------------------------------------------------------------
+
+au BufNewFile,BufRead *.md,*.markdown,*.mdown,*.mkd,*.mkdn set filetype=markdown
+
 

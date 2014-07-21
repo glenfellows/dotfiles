@@ -6,14 +6,16 @@ set encoding=utf8
 " Set text width
 set textwidth=79
 
-" Use soft line breaks
+" Set word wrap to work correctly
 set wrap
+set linebreak
+set nolist    " list disables linebreak
 
 " Set up automatic formatting
-set formatoptions=qrn1
+autocmd BufWinEnter,BufRead * setlocal formatoptions=qrnt1
 
 " Ensure that there are always lines above and below cursor
-set scrolloff=3
+set scrolloff=8
 
 " Show the current mode
 set showmode
@@ -21,13 +23,16 @@ set showmode
 " Show information on the current command
 set showcmd
 
+" Make command line two lines high
+set ch=2
+
 " Set color scheme
 let g:solarized_termtrans = 1
 colorscheme solarized
 set background=dark
 
 " Enable syntax highlighting
-syntax enable
+syntax on
 
 " Highlight the current line
 set cursorline
