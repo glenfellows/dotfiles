@@ -24,6 +24,5 @@ filetype plugin on
 " Markdown
 "-------------------------------------------------------------
 
-au BufNewFile,BufRead *.md,*.markdown,*.mdown,*.mkd,*.mkdn set filetype=markdown
-
+autocmd BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,mdwn} set filetype=markdown
 

@@ -1,10 +1,10 @@
-" Glen Fellows: configure how vim looks
-
+" Glen Fellows: configure the vim user interface
+  
 " Set standard encoding
 set encoding=utf8
 
 " Set text width
-set textwidth=79
+set textwidth=80
 
 " Set word wrap to work correctly
 set wrap
@@ -26,10 +26,19 @@ set showcmd
 " Make command line two lines high
 set ch=2
 
-" Set color scheme
+" Set default color scheme
 let g:solarized_termtrans = 1
 colorscheme solarized
 set background=dark
+
+" Set color scheme based on file type and maintain as we switch buffers
+:autocmd BufEnter,FileType *
+\   if &ft == 'markdown' 
+\|      colorscheme iawriter 
+\|  else 
+\|      colorscheme solarized
+\|      set background=dark
+\|  endif
 
 " Enable syntax highlighting
 syntax on
@@ -58,11 +67,11 @@ set shiftwidth=4      " for autoindenting
 set expandtab
 
 
-
+ 
 " Set up the status line --------------------------------------------
 set laststatus=2
-hi User1 ctermbg=white    ctermfg=black   guibg=#89A1A1 guifg=#002B36
-hi User2 ctermbg=red      ctermfg=white   guibg=#aa0000 guifg=#89a1a1
+"hi User1 ctermbg=white    ctermfg=black   guibg=#89A1A1 guifg=#002B36
+"hi User2 ctermbg=red      ctermfg=white   guibg=#aa0000 guifg=#89a1a1
 
 function! GetName()
   return expand("%:t")==''?'<none>':expand("%:t")
@@ -76,20 +85,36 @@ function! IsHelp()
   return &buftype=='help'?' (help) ':''
 endfunction
 
-set statusline=%1*[%{GetName()}]
-set statusline+=[%<pwd:%{getcwd()}]
-set statusline+=%2*%{&modified?'\[+]':''}%*
-set statusline+=%{IsHelp()}
-set statusline+=%{&readonly?'\ (ro)\ ':''}
+"set statusline=\ [%{GetName()}]
+"set statusline+=\ [%<pwd:%{getcwd()}]\ 
+"set statusline+=%{&modified?'\[+]':''}
+"set statusline+=%{IsHelp()}
+"set statusline+=%{&readonly?'\ [ro]\ ':''}
+"set statusline+=\ [
+"set statusline+=%{strlen(&fenc)?&fenc:'none'}\ 
+"set statusline+=%{&ff}\ 
+"set statusline+=%{strlen(&ft)?&ft:'<none>'}
+"set statusline+=]\ 
+"set statusline+=%=
+"set statusline+=Col:%c
+"set statusline+=\ Line:%l
+"set statusline+=/%L\ [%p%%]\ 
+
+
+set statusline=\ [%{GetName()}]
+set statusline+=\ [%<pwd:%{getcwd()}]\ 
 set statusline+=[
 set statusline+=%{strlen(&fenc)?&fenc:'none'}\|
 set statusline+=%{&ff}\|
 set statusline+=%{strlen(&ft)?&ft:'<none>'}
-set statusline+=]
+set statusline+=]\ 
+set statusline+=\ %{&modified?'\[+]':''}
+set statusline+=%{IsHelp()}
+set statusline+=%{&readonly?'\ [ro]\ ':''}
 set statusline+=%=
-set statusline+=c%c
-set statusline+=,l%l
-set statusline+=/%L
+set statusline+=Col:%c
+set statusline+=\ Line:%l
+set statusline+=/%L\ [%p%%]\ 
 " ------------------------------------------------------------------
 
 " Allow backspacing over everything in insert mode 

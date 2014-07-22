@@ -1,9 +1,34 @@
 " Glen Fellows: general vim settings
 
 
-"-----------------
-" General settings
-"-----------------
+"----------------
+" Search settings 
+"----------------
+
+" All lower-case: case-insensitive. Any uppercase: case-sensitive 
+set ignorecase 
+set smartcase
+
+" Search results as you type
+set incsearch
+set showmatch
+
+" Apply substitutions globally on lines
+set gdefault
+
+" Set the search scan to wrap lines
+set wrapscan
+
+"--------------
+" Folding
+"--------------
+
+set foldlevel=0
+
+
+"--------------
+" Misc settings
+"--------------
 
 " Don't redraw while executing macros
 set lazyredraw
@@ -13,21 +38,4 @@ set modelines=0
 
 " Enable fast scrolling
 set ttyfast
-
-
-"----------------
-" Search settings 
-"----------------
-
-" All lower-case: case-insensitive. Any uppercase: case-sensitive 
-set ignorecase 
-set smartcase
-
-" Highlight search results as you type
-set hlsearch
-set incsearch
-set showmatch
-
-" Apply substitutions globally on lines
-set gdefault
 
