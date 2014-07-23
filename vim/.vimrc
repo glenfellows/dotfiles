@@ -7,3 +7,4 @@ source ~/dotfiles/vim/settings.vim
 source ~/dotfiles/vim/interface.vim
 source ~/dotfiles/vim/mappings.vim
 source ~/dotfiles/vim/filetypes.vim
+

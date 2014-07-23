@@ -1,4 +1,5 @@
 " Glen Fellows: general vim settings
+" Date:         July 23, 2014
 
 "----------------
 " Search {{{1

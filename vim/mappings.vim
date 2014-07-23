@@ -1,4 +1,5 @@
 " Glen Fellows: settings for key mappings 
+" Date:         July 23, 2014
 
 " Change the map leader from the \ default
 let mapleader = ","

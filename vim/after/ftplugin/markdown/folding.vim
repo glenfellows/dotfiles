@@ -1,3 +1,6 @@
+" Glen Fellows: folding for Markdown
+" From: Vim.org
+
 " Fold expressions {{{1
 function! StackedMarkdownFolds()
   if HeadingDepth(v:lnum) > 0

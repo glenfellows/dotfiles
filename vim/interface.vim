@@ -1,5 +1,6 @@
 " Glen Fellows: configure the vim user interface
-   
+" Date:         July 23, 2014
+
 " Set standard encoding
 set encoding=utf8
 

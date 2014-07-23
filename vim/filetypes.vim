@@ -1,5 +1,5 @@
 " Glen Fellows: Settings for working with files and filetypes
-" Date:         July 22, 2014
+" Date:         July 23, 2014
 
 " General settings  {{{1
 "------------------------------

@@ -3,7 +3,7 @@
 " Maintainer:  Jacek Dominiak <doj (at) ptpbs (dot) com>
 "
 " Description: Vim color file
-"
+
 
 set background=light
 hi clear
