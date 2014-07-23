@@ -1,4 +1,8 @@
-" Glen Fellows: settings for working with files and filetypes
+" Glen Fellows: Settings for working with files and filetypes
+" Date:         July 22, 2014
+
+" General settings  {{{1
+"------------------------------
 
 " No backup files
 set nobackup
@@ -21,7 +25,7 @@ filetype plugin on
 
 
 "-------------------------------------------------------------
-" Markdown
+" Markdown  {{{1
 "-------------------------------------------------------------
 
 autocmd BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,mdwn} set filetype=markdown

@@ -1,8 +1,7 @@
 " Glen Fellows: general vim settings
 
-
 "----------------
-" Search settings 
+" Search {{{1
 "----------------
 
 " All lower-case: case-insensitive. Any uppercase: case-sensitive 
@@ -19,15 +18,18 @@ set gdefault
 " Set the search scan to wrap lines
 set wrapscan
 
-"--------------
-" Folding
-"--------------
-
-set foldlevel=0
-
 
 "--------------
-" Misc settings
+" Folding  {{{1
+"--------------
+
+" Set default fold method to markers
+set foldmethod=marker
+
+
+
+"--------------
+" Misc {{{1
 "--------------
 
 " Don't redraw while executing macros

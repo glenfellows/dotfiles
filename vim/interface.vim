@@ -1,5 +1,5 @@
 " Glen Fellows: configure the vim user interface
-  
+   
 " Set standard encoding
 set encoding=utf8
 
@@ -68,10 +68,8 @@ set expandtab
 
 
  
-" Set up the status line --------------------------------------------
+" Status line  --------------------------------------------
 set laststatus=2
-"hi User1 ctermbg=white    ctermfg=black   guibg=#89A1A1 guifg=#002B36
-"hi User2 ctermbg=red      ctermfg=white   guibg=#aa0000 guifg=#89a1a1
 
 function! GetName()
   return expand("%:t")==''?'<none>':expand("%:t")
@@ -85,22 +83,6 @@ function! IsHelp()
   return &buftype=='help'?' (help) ':''
 endfunction
 
-"set statusline=\ [%{GetName()}]
-"set statusline+=\ [%<pwd:%{getcwd()}]\ 
-"set statusline+=%{&modified?'\[+]':''}
-"set statusline+=%{IsHelp()}
-"set statusline+=%{&readonly?'\ [ro]\ ':''}
-"set statusline+=\ [
-"set statusline+=%{strlen(&fenc)?&fenc:'none'}\ 
-"set statusline+=%{&ff}\ 
-"set statusline+=%{strlen(&ft)?&ft:'<none>'}
-"set statusline+=]\ 
-"set statusline+=%=
-"set statusline+=Col:%c
-"set statusline+=\ Line:%l
-"set statusline+=/%L\ [%p%%]\ 
-
-
 set statusline=\ [%{GetName()}]
 set statusline+=\ [%<pwd:%{getcwd()}]\ 
 set statusline+=[
@@ -112,7 +94,7 @@ set statusline+=\ %{&modified?'\[+]':''}
 set statusline+=%{IsHelp()}
 set statusline+=%{&readonly?'\ [ro]\ ':''}
 set statusline+=%=
-set statusline+=Col:%c
+set statusline+=\ Col:%c
 set statusline+=\ Line:%l
 set statusline+=/%L\ [%p%%]\ 
 " ------------------------------------------------------------------

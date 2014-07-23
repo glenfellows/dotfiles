@@ -1,6 +1,3 @@
-" Glen Fellows: Enables folding by section headings in Markdown
-" From: https://github.com/nelstrom/vim-markdown-folding
-
 " Fold expressions {{{1
 function! StackedMarkdownFolds()
   if HeadingDepth(v:lnum) > 0
@@ -98,7 +95,7 @@ command! -buffer FoldToggle call ToggleMarkdownFoldexpr()
 
 " Setup {{{1
 if !exists('g:markdown_fold_style')
-  let g:markdown_fold_style = 'stacked'
+  let g:markdown_fold_style = 'nested'
 endif
 
 if !exists('g:markdown_fold_override_foldtext')
