@@ -35,9 +35,8 @@ set background=dark
 " Set color scheme based on file type and maintain as we switch buffers
 :autocmd BufEnter,FileType *
 \   if &ft == 'markdown' 
-\|      colorscheme iawriter 
+\|      set background=light
 \|  else 
-\|      colorscheme solarized
 \|      set background=dark
 \|  endif
 
