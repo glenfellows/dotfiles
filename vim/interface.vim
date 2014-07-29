@@ -116,34 +116,32 @@ set laststatus=2
 " Show current position
 set ruler
 
-" My original status line - now using Airline
+ function! GetName()
+  return expand("%:t")==''?'<none>':expand("%:t")
+endfunction
 
-" function! GetName()
-"  return expand("%:t")==''?'<none>':expand("%:t")
-"endfunction
+function! GetCWD()
+  return expand(":pwd")
+endfunction
 
-"function! GetCWD()
-"  return expand(":pwd")
-"endfunction
+function! IsHelp()
+  return &buftype=='help'?' (help) ':''
+endfunction
 
-"function! IsHelp()
-"  return &buftype=='help'?' (help) ':''
-"endfunction
-
-"set statusline=\ [%{GetName()}]
-"set statusline+=\ [%<pwd:%{getcwd()}]\ 
-"set statusline+=[
-"set statusline+=%{strlen(&fenc)?&fenc:'none'}\|
-"set statusline+=%{&ff}\|
-"set statusline+=%{strlen(&ft)?&ft:'<none>'}
-"set statusline+=]\ 
-"set statusline+=\ %{&modified?'\[+]':''}
-"set statusline+=%{IsHelp()}
-"set statusline+=%{&readonly?'\ [ro]\ ':''}
-"set statusline+=%=
-"set statusline+=\ Col:%c
-"set statusline+=\ Line:%l
-"set statusline+=/%L\ [%p%%]\ 
+set statusline=\ [%{GetName()}]
+set statusline+=\ [%<pwd:%{getcwd()}]\ 
+set statusline+=[
+set statusline+=%{strlen(&fenc)?&fenc:'none'}\|
+set statusline+=%{&ff}\|
+set statusline+=%{strlen(&ft)?&ft:'<none>'}
+set statusline+=]\ 
+set statusline+=\ %{&modified?'\[+]':''}
+set statusline+=%{IsHelp()}
+set statusline+=%{&readonly?'\ [ro]\ ':''}
+set statusline+=%=
+set statusline+=\ Col:%c
+set statusline+=\ Line:%l
+set statusline+=/%L\ [%p%%]\ 
 
 
 " Command Line                                                      {{{1

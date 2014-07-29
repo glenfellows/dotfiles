@@ -19,6 +19,12 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 
+" Theme: Solarized                                                  {{{1
+" ----------------------------------------------------------------------
+
+Plugin 'altercation/vim-colors-solarized'
+
+
 " Vundle End                                                        {{{1
 " ----------------------------------------------------------------------
 

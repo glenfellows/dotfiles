@@ -6,9 +6,9 @@
 set nocompatible
 
 " Load the remaining configuration modules
+source ~/dotfiles/vim/plugins.vim
 source ~/dotfiles/vim/general.vim
 source ~/dotfiles/vim/filetypes.vim
 source ~/dotfiles/vim/interface.vim
 source ~/dotfiles/vim/mappings.vim
-source ~/dotfiles/vim/plugins.vim
 
