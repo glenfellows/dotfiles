@@ -116,7 +116,7 @@ set laststatus=2
 " Show current position
 set ruler
 
- function! GetName()
+function! GetName()
   return expand("%:t")==''?'<none>':expand("%:t")
 endfunction
 
