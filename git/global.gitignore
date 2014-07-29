@@ -38,5 +38,5 @@ Icon?
 *.sw?
 .netrwhist
 Session.vim
-~/dotfiles/vim/bundle/
+bundle/
 
