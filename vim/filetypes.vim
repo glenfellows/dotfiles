@@ -4,8 +4,10 @@
 " General file settings                                             {{{1
 "-----------------------------------------------------------------------
 
-" Enable settings specific to the type of file
+" Enable filetype detection
 filetype on
+
+
 filetype indent on
 filetype plugin on
 
@@ -15,15 +17,16 @@ set nobackup
 " Save when tabbing away from vim
 autocmd FocusLost * :wa
 
-" Automatically read file when it is changed outside vim
-set autoread
-
 " Hide buffers instead of closing them; don't limit to 1 file per window/split
 set hidden
+
+" Autoload hidden buffers on change
+set autoread
 
 
 " Markdown                                                          {{{1
 "-----------------------------------------------------------------------
-
-autocmd BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,mdwn} set filetype=markdown
+if has("autocmd")
+    autocmd BufNewFile,BufRead *.{md,markdown,mdown,mkd,mkdn,mdwn} set filetype=markdown
+endif
 

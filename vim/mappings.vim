@@ -19,10 +19,10 @@ nnoremap <tab> %
 vnoremap <tab> %
 
 " Make moving around in splits much easier
-nnoremap <C-J> <C-W><C-J> "Ctrl-j to move down a split  
-nnoremap <C-K> <C-W><C-K> "Ctrl-k to move up a split  
-nnoremap <C-L> <C-W><C-L> "Ctrl-l to move    right a split  
-nnoremap <C-H> <C-W><C-H> "Ctrl-h to move left a split
+nnoremap <C-h> <C-w><C-h> "Ctrl-h to move left a split
+nnoremap <C-j> <C-w><C-j> "Ctrl-j to move down a split  
+nnoremap <C-k> <C-w><C-k> "Ctrl-k to move up a split  
+nnoremap <C-l> <C-w><C-l> "Ctrl-l to move right a split  
 
 " From Derek Wyatt: The following beast is something i didn't write... it will  
 " return the syntax highlighting group that the current "thing" under the cursor

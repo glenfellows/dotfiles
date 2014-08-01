@@ -1,5 +1,5 @@
 " Glen Fellows: configure the vim user interface
-" Last Change:  July 29, 2014
+" Last Change:  July 31, 2014
 
 " General interface settings                                        {{{1
 " ----------------------------------------------------------------------
@@ -35,7 +35,6 @@ set visualbell
 " ----------------------------------------------------------------------
 
 " Set default color scheme
-let g:solarized_termtrans = 1
 colorscheme solarized
 set background=dark
 
@@ -51,10 +50,17 @@ set background=dark
 " Tabs                                                              {{{1
 " ----------------------------------------------------------------------
 
-" Set tabs
+" Set the width of the tab character
 set tabstop=4
+
+" With expandtab on and softtabstop set to 0, tab indents 4 spaces, but 
+" backspace deletes a space at a time. Setting softtabstop to the tabstop
+" value will allow the backspace key to delete the 4 spaces as if they 
+" were a single tab.
 set softtabstop=4
-set shiftwidth=4      " for autoindenting
+
+" Set amount of whitespace to be used in indentation commands in normal mode
+set shiftwidth=4
 
 " Use spaces instead of tabs
 set expandtab
@@ -107,6 +113,15 @@ set splitright          " open vertical split right of current window
 set splitbelow          " open horizontal split below the current window
 
 
+" Tab line                                                          {{{1
+" ----------------------------------------------------------------------
+
+" Always show the tab line
+"set showtabline=2
+
+"set tabline=B:%n
+
+
 " Status line                                                       {{{1
 " ----------------------------------------------------------------------
 
@@ -116,32 +131,70 @@ set laststatus=2
 " Show current position
 set ruler
 
-function! GetName()
-  return expand("%:t")==''?'<none>':expand("%:t")
+" Color settings for mode indicator
+let g:StatusLine_color_normal   = 'guifg=#e4e4e4 guibg=#0087ff gui=NONE ctermfg=15 ctermbg=33 cterm=NONE'  
+let g:StatusLine_color_insert   = 'guifg=#e4e4e4 guibg=#5f8700 gui=NONE ctermfg=15 ctermbg=64 cterm=NONE'
+let g:StatusLine_color_replace  = 'guifg=#e4e4e4 guibg=#d33682 gui=NONE ctermfg=15 ctermbg=125 cterm=NONE' 
+let g:StatusLine_color_visual   = 'guifg=#e4e4e4 guibg=#b58900 gui=NONE ctermfg=15 ctermbg=136 cterm=NONE'  
+
+" Mode indicator
+function! Mode()
+    redraw
+    let l:mode = mode()
+    if     mode ==# "n"  | exec 'hi User1 '.g:StatusLine_color_normal  | return "NORMAL"
+    elseif mode ==# "i"  | exec 'hi User1 '.g:StatusLine_color_insert  | return "INSERT"
+    elseif mode ==# "R"  | exec 'hi User1 '.g:StatusLine_color_replace | return "REPLACE"
+    elseif mode ==# "v"  | exec 'hi User1 '.g:StatusLine_color_visual  | return "VISUAL"
+    else                 | return l:mode
+    endif
 endfunction
 
-function! GetCWD()
-  return expand(":pwd")
+" Current directory
+function! CurDir()
+    return substitute(getcwd(), '/Users/glen/', "~/", "g")
 endfunction
 
-function! IsHelp()
-  return &buftype=='help'?' (help) ':''
-endfunction
-
-set statusline=\ [%{GetName()}]
-set statusline+=\ [%<pwd:%{getcwd()}]\ 
-set statusline+=[
-set statusline+=%{strlen(&fenc)?&fenc:'none'}\|
-set statusline+=%{&ff}\|
-set statusline+=%{strlen(&ft)?&ft:'<none>'}
-set statusline+=]\ 
-set statusline+=\ %{&modified?'\[+]':''}
-set statusline+=%{IsHelp()}
-set statusline+=%{&readonly?'\ [ro]\ ':''}
-set statusline+=%=
-set statusline+=\ Col:%c
-set statusline+=\ Line:%l
-set statusline+=/%L\ [%p%%]\ 
+set statusline=%1*                              " highlight User1
+set statusline+=\                               " space at the beginning
+set statusline+=%{Mode()}                       " mode
+set statusline+=\                               " space
+set statusline+=%#PmenuSel#                     " back to normal status hilite
+set statusline+=\                               " space
+set statusline+=%{GitBranchInfoString()}        " Git branch info
+set statusline+=\                               " space
+set statusline+=%#StatusLineNC#                 " hilite 
+set statusline+=\                               " space
+set statusline+=%t                              " file name
+set statusline+=\                               " space 
+set statusline+=%*                              " normal status hilite
+set statusline+=%<                              " truncation point
+set statusline+=\                               " space
+set statusline+=%{CurDir()}                     " the directory/folder
+set statusline+=%=                              " align right
+set statusline+=\ \                             " spaces
+set statusline+=%m                              " file modified flag
+set statusline+=%{&readonly?'\ \ ':''}         " read-only flag
+set statusline+=\ [                             " spaces and left bracket
+set statusline+=%{strlen(&fenc)?&fenc:'none'}   " file encoding
+set statusline+=\|                              " separator
+set statusline+=%{&ff}                          " file format
+set statusline+=\|                              " separator
+set statusline+=%{strlen(&ft)?&ft:'<none>'}     " file type
+set statusline+=]\ \                            " closing bracket and spaces
+set statusline+=%#StatusLineNC#                 " highlight
+set statusline+=\                               " space
+set statusline+=B\ %n                           " buffer number
+set statusline+=\                               " space 
+set statusline+=%#PmenuSel#                     " hilite
+set statusline+=\                               " space 
+set statusline+=C\ %c                           " cursor column
+set statusline+=\                               " space 
+set statusline+=%1*                             " hilite
+set statusline+=\                               " space
+set statusline+=\ %l/%L                        " cursor line/total lines
+set statusline+=\ \                             " space and separator
+set statusline+=%p%%                            " percent through file
+set statusline+=\                               " space 
 
 
 " Command Line                                                      {{{1
@@ -150,8 +203,8 @@ set statusline+=/%L\ [%p%%]\
 " Make command line two lines high
 set ch=2
 
-" Show the current mode
-set showmode
+" Do not show the current mode
+set noshowmode
 
 " Show information on the current command
 set showcmd

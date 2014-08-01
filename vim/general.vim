@@ -1,19 +1,23 @@
 " Glen Fellows: general vim settings
-" Last Change:  July 29, 2014
+" Last Change:  July 30, 2014
 
 " Search                                                            {{{1
 "-----------------------------------------------------------------------
 
-" All lower-case: case-insensitive. Any uppercase: case-sensitive 
+" Ignore case when searching
 set ignorecase 
+
+" Unless the search term has capital letters
 set smartcase
 
-" Search results as you type
-set incsearch
-set showmatch
-
-" Apply substitutions globally on lines
+" Global search and replace by default
 set gdefault
+
+" Start searching as soon as text is typed
+set incsearch
+
+" Show the matching bracket when closing bracket is typed
+set showmatch
 
 " Set the search scan to wrap lines
 set wrapscan
